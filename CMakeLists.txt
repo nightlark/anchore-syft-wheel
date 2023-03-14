@@ -8,6 +8,11 @@ string(REPLACE "x86_64" "amd64" CPU_NAME "${CPU_NAME}")
 string(REPLACE "aarch64" "arm64" CPU_NAME "${CPU_NAME}")
 message(STATUS "OS: ${OS_NAME}, CPU: ${CPU_NAME}")
 
+set(DL_EXT "tar.gz")
+if("${OS_NAME}" STREQUAL "windows")
+  set(DL_EXT "zip")
+endif()
+
 include(FetchContent)
 include(syft_version.cmake)
 
@@ -16,7 +21,7 @@ set(SYFT_INSTALL_DIR ${CMAKE_BINARY_DIR}/syft-install)
 FetchContent_Declare(
   syft
   SOURCE_DIR ${SYFT_INSTALL_DIR}
-  URL https://github.com/anchore/syft/releases/download/v${SYFT_VERSION}/syft_${SYFT_VERSION}_${OS_NAME}_${CPU_NAME}.tar.gz
+  URL https://github.com/anchore/syft/releases/download/v${SYFT_VERSION}/syft_${SYFT_VERSION}_${OS_NAME}_${CPU_NAME}.${DL_EXT}
   #URL_HASH
   #DOWNLOAD_EXTRACT_TIMESTAMP TRUE
   CONFIGURE_COMMAND ""
