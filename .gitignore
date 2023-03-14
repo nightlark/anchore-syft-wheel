@@ -1,6 +1,9 @@
 # setuptools_scm auto-generated version file
 src/anchore_syft/_version.py
 
+# scikit build temp build directory
+_skbuild
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
