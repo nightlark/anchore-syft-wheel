@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.10)
 
 project(SyftPythonDistributions NONE)
 
@@ -17,7 +17,7 @@ FetchContent_Declare(
   SOURCE_DIR ${SYFT_INSTALL_DIR}
   URL https://github.com/anchore/syft/releases/download/v${SYFT_VERSION}/syft_${SYFT_VERSION}_${OS_NAME}_${CPU_NAME}.tar.gz
   #URL_HASH
-  DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+  #DOWNLOAD_EXTRACT_TIMESTAMP TRUE
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
   INSTALL_COMMAND ""
