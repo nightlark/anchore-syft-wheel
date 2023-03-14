@@ -14,5 +14,9 @@ def _program(name, args):
     return subprocess.call([os.path.join(BIN_DIR, name)] + args, env=SYFT_LIB_ENV)
 
 
+def run(*args):
+    _program("syft", list(args))
+
+
 def syft():
     raise SystemExit(_program("syft", sys.argv[1:]))
