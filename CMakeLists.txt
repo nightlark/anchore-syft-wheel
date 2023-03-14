@@ -5,6 +5,7 @@ project(SyftPythonDistributions NONE)
 string(TOLOWER "${CMAKE_HOST_SYSTEM_NAME}" OS_NAME)
 string(TOLOWER "${CMAKE_HOST_SYSTEM_PROCESSOR}" CPU_NAME)
 string(REPLACE "x86_64" "amd64" CPU_NAME "${CPU_NAME}")
+string(REPLACE "aarch64" "arm64" CPU_NAME "${CPU_NAME}")
 message(STATUS "OS: ${OS_NAME}, CPU: ${CPU_NAME}")
 
 include(FetchContent)
