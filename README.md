@@ -6,8 +6,10 @@ Syft Python Distributions
 A project that packages Syft as a Python package, enabling `syft` to be installed from PyPI:
 
 ```sh
-pip install syft
+pip install anchore_syft
 ```
+
+Afterwards, Syft can be run using either `syft` or `anchore_syft`.
 
 PyPI package versions will follow the `major.minor.patch` version numbers of Syft releases.
 
@@ -25,13 +27,13 @@ Installing Syft
 Syft can be installed by pip with:
 
 ```sh
-pip install syft
+pip install anchore_syft
 ```
 
 or:
 
 ```sh
-python -m pip install syft
+python -m pip install anchore_syft
 ```
 
 Building from the source dist package requires internet access in order to download one of the pre-compiled release binaries from <https://github.com/anchore/syft/releases>.
@@ -41,7 +43,7 @@ to build Syft from source.
 Using with pipx
 ===============
 
-Using `pipx run syft <args>` will run Syft without any install step, as long as the machine has pipx installed (which includes GitHub Actions runners).
+Using `pipx run anchore_syft <args>` will run Syft without any install step, as long as the machine has pipx installed (which includes GitHub Actions runners).
 
 Using with pyproject.toml
 =========================
@@ -50,7 +52,7 @@ Syft can be added to the `project.dependencies` key in a pyproject.toml file for
 
 ```toml
 [project]
-dependencies = ["syft"]
+dependencies = ["anchore_syft"]
 ```
 
 License

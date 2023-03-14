@@ -4,4 +4,4 @@ include syft_version.cmake
 
 recursive-exclude _skbuild *
 
-include src/syft/_version.py
+include src/anchore_syft/_version.py

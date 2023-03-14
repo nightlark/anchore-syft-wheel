@@ -25,6 +25,6 @@ cmdclass = {"bdist_wheel": genericpy_bdist_wheel}
 setup(
     cmdclass=cmdclass,
     package_dir={"": "src"},
-    packages=["syft"],
-    cmake_install_dir="src/syft/data",
+    packages=["anchore_syft"],
+    cmake_install_dir="src/anchore_syft/data",
 )

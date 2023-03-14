@@ -18,7 +18,7 @@ manylinux-x86_64-image = "manylinux1"
 manylinux-i686-image = "manylinux1"
 
 [project]
-name = "syft"
+name = "anchore_syft"
 description = "CLI tool for generating a Software Bill of Materials from container images and filesystems"
 readme = "README.md"
 keywords = ["anchore", "syft", "sbom"]
@@ -47,7 +47,8 @@ download_url = "https://github.com/anchore/syft/releases"
 "Bug Tracker" = "https://github.com/nightlark/anchore-syft-wheel/issues"
 
 [project.scripts]
-syft = "syft:syft"
+syft = "anchore_syft:syft"
+anchore_syft = "anchore_syft:syft"
 
 #[tool.setuptools.packages.find]
 #where = ["src"]  # list of folders that contain the packages (["."] by default)
@@ -56,4 +57,4 @@ syft = "syft:syft"
 #syft = ["syft*"]
 
 [tool.setuptools_scm]
-write_to = "src/syft/_version.py"
+write_to = "src/anchore_syft/_version.py"

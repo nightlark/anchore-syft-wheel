@@ -1,5 +1,5 @@
 # setuptools_scm auto-generated version file
-src/syft/_version.py
+src/anchore_syft/_version.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
