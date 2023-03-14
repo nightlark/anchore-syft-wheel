@@ -1,0 +1,1 @@
+set(SYFT_VERSION 0.75.0)

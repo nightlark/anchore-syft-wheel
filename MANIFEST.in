@@ -1,0 +1,7 @@
+include CMakeLists.txt
+include README.md
+include syft_version.cmake
+
+recursive-exclude _skbuild *
+
+include src/syft/_version.py
