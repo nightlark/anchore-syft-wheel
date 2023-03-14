@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.24)
 project(SyftPythonDistributions NONE)
 
 string(TOLOWER "${CMAKE_HOST_SYSTEM_NAME}" OS_NAME)
-set(CPU_NAME "${CMAKE_HOST_SYSTEM_PROCESSOR}")
+string(TOLOWER "${CMAKE_HOST_SYSTEM_PROCESSOR}" CPU_NAME)
+string(REPLACE "x86_64" "amd64" CPU_NAME "${CPU_NAME}")
 message(STATUS "OS: ${OS_NAME}, CPU: ${CPU_NAME}")
 
 include(FetchContent)
