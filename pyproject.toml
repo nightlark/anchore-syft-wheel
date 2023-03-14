@@ -25,7 +25,6 @@ keywords = ["anchore", "syft", "sbom"]
 license = {text = "Apache-2.0"}
 classifiers = [
     "License :: OSI Approved :: Apache Software License",
-    "Programming Language :: Go",
     "Operating System :: OS Independent",
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: Microsoft :: Windows",
