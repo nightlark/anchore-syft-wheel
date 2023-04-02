@@ -18,7 +18,7 @@ jobs:
           echo "old_version=$old_version" >> $GITHUB_OUTPUT
 
           new_version=$(git -c 'versionsort.suffix=-' \
-            ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/syft/syft/ 'v*.*.*'\
+            ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/anchore/syft/ 'v*.*.*'\
             | tail --lines=1\
             | cut --delimiter='/' --fields=3\
             | grep -Po '\d+(\.\d+)+')
