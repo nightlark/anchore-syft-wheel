@@ -14,8 +14,15 @@ def _program(name, args):
     return subprocess.call([os.path.join(BIN_DIR, name)] + args, env=SYFT_LIB_ENV)
 
 
+def _run(name, args, capture_output=True):
+    return subprocess.run(
+        [os.path.join(BIN_DIR, name)] + args, capture_output=capture_output
+    )
+
+
+# Return value of type subprocess.CompletedProcess
 def run(*args):
-    _program("syft", list(args))
+    return _run("syft", list(args))
 
 
 def syft():
