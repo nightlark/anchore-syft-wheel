@@ -13,7 +13,7 @@ jobs:
       - name: Check and update Syft version
         id: check-syft
         run: |
-          old_version="$(grep -Po '(?<=Syft_VERSION )\d+(\.\d+)+' syft_version.cmake)"
+          old_version="$(grep -Po '(?<=SYFT_VERSION )\d+(\.\d+)+' syft_version.cmake)"
           echo "Old version: $old_version"
           echo "old_version=$old_version" >> $GITHUB_OUTPUT
 
@@ -27,7 +27,7 @@ jobs:
           echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
           if [ "$old_version" != "$new_version" ]; then
-            echo "set(Syft_VERSION $new_version)" > syft_version.cmake
+            echo "set(SYFT_VERSION $new_version)" > syft_version.cmake
             echo "syft version updated"
           else
             echo "No change in syft version"
