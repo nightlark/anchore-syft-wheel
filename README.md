@@ -1,7 +1,7 @@
 Syft Python Distributions
 =========================
 
-[![PyPI](https://img.shields.io/pypi/v/syft.svg)](https://pypi.org/project/syft)
+[![PyPI](https://img.shields.io/pypi/v/anchore-syft.svg)](https://pypi.org/project/anchore-syft)
 
 A project that packages Syft as a Python package, enabling `syft` to be installed from PyPI:
 
