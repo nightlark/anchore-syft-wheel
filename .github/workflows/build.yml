@@ -20,26 +20,32 @@ jobs:
           - os: ubuntu-20.04
             arch: "x86_64"
             build: "manylinux_"
+            artifact_suffix: "manylinux_x86_64"
             use_qemu: false
           - os: ubuntu-20.04
             arch: "aarch64"
             build: "manylinux_"
+            artifact_suffix: "manylinux_aarch64"
             use_qemu: true
           - os: ubuntu-20.04
             arch: "ppc64le"
             build: "manylinux_"
+            artifact_suffix: "manylinux_ppc64le"
             use_qemu: true
           - os: ubuntu-20.04
             arch: "s390x"
             build: "manylinux_"
+            artifact_suffix: "manylinux_s390x"
             use_qemu: true
           - os: windows-2019
             arch: "AMD64"
             build: ""
+            artifact_suffix: "windows_x86_64"
             use_qemu: false
           - os: macos-11
             arch: "x86_64 arm64"
             build: ""
+            artifact_suffix: "macos"
             use_qemu: false
 
     steps:
@@ -60,6 +66,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
+          name: artifact-${{matrix.artifact_suffix}}
           path: ./wheelhouse/*.whl
 
   build_sdist:
@@ -75,7 +82,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: artifact-${{matrix.os}}${{matrix.build}}${{matrix.arch}}
+          name: artifact-sdist
           path: dist/*.tar.gz
 
   check_dist:
@@ -85,7 +92,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: artifact-sdist
           path: dist
 
       - run: pipx run twine check --strict dist/*
