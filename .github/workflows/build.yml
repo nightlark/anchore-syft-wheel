@@ -93,7 +93,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: dist
-
+          merge-multiple: true
       - run: pipx run twine check --strict dist/*
 
   pypi-publish:
@@ -107,9 +107,10 @@ jobs:
     permissions:
       id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
-    - name: Download Python package dist artifacts
-      uses: actions/download-artifact@v4
-      with:
-        path: dist
-    - name: Publish package distributions to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
+      - name: Download Python package dist artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
