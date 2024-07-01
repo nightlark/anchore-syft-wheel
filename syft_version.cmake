@@ -1,1 +1,1 @@
-set(SYFT_VERSION 0.85.0)
+set(SYFT_VERSION 1.8.0)
