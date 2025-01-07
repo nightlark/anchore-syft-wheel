@@ -63,7 +63,7 @@ jobs:
           CIBW_ARCHS: "${{ matrix.arch }}"
           CIBW_ARCHS_MACOS: "x86_64 arm64"
           CIBW_BUILD: "cp39-${{ matrix.build }}*"
-          MACOSX_DEPLOYMENT_TARGET: "10.13"
+          MACOSX_DEPLOYMENT_TARGET: "11.0"
 
       - uses: actions/upload-artifact@v4
         with:
