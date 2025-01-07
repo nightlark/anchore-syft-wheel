@@ -8,6 +8,18 @@ string(REPLACE "x86_64" "amd64" CPU_NAME "${CPU_NAME}")
 string(REPLACE "aarch64" "arm64" CPU_NAME "${CPU_NAME}")
 message(STATUS "OS: ${OS_NAME}, CPU: ${CPU_NAME}")
 
+# Check if a specific architecture is requested on macOS
+if("${OS_NAME}" STREQUAL "darwin" AND DEFINED CMAKE_OSX_ARCHITECTURES)
+  list(LENGTH CMAKE_OSX_ARCHITECTURES ARCH_COUNT)
+  if(ARCH_COUNT GREATER 1)
+    message(WARNING "Multiple architectures specified in CMAKE_OSX_ARCHITECTURES, using the first one.")
+  endif()
+  list(GET CMAKE_OSX_ARCHITECTURES 0 CPU_NAME)
+  string(TOLOWER "${CPU_NAME}" CPU_NAME)
+  string(REPLACE "x86_64" "amd64" CPU_NAME "${CPU_NAME}")
+  string(REPLACE "arm64" "arm64" CPU_NAME "${CPU_NAME}")
+endif()
+
 set(DL_EXT "tar.gz")
 if("${OS_NAME}" STREQUAL "windows")
   set(DL_EXT "zip")
