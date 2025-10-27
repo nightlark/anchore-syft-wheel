@@ -65,7 +65,7 @@ jobs:
           CIBW_BUILD: "cp39-${{ matrix.build }}*"
           MACOSX_DEPLOYMENT_TARGET: "11.0"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: artifact-${{matrix.artifact_suffix}}
           path: ./wheelhouse/*.whl
@@ -81,7 +81,7 @@ jobs:
       - name: Build SDist
         run: pipx run build --sdist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: artifact-sdist
           path: dist/*.tar.gz
